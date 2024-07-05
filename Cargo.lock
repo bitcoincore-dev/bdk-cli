@@ -176,12 +176,13 @@ dependencies = [
 
 [[package]]
 name = "bdk-cli"
-version = "0.27.1"
+version = "0.27.2"
 dependencies = [
  "base64 0.13.1",
  "bdk",
  "bdk-macros",
  "bdk-reserves",
+ "cargo-dist",
  "clap",
  "dirs-next",
  "electrsd",
@@ -378,6 +379,12 @@ dependencies = [
  "libc",
  "pkg-config",
 ]
+
+[[package]]
+name = "cargo-dist"
+version = "0.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2409819015fafe1e0842975cf3e2e3bc45a9149b67cb3f32388e214deb81bfd3"
 
 [[package]]
 name = "cc"

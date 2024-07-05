@@ -1,6 +1,6 @@
 [package]
 name = "bdk-cli"
-version = "0.27.1"
+version = "0.27.2"
 edition = "2018"
 authors = ["Alekos Filini <alekos.filini@gmail.com>", "Riccardo Casatta <riccardo@casatta.it>", "Steve Myers <steve@notmandatory.org>"]
 homepage = "https://bitcoindevkit.org"
@@ -120,7 +120,7 @@ installers = ["shell", "powershell", "homebrew", "msi"]
 # A GitHub repo to push Homebrew formulas to
 tap = "bitcoincore-dev/homebrew-bitcoindevkit.org"
 # Target platforms to build apps for (Rust target-triple syntax)
-targets = ["aarch64-apple-darwin", "x86_64-apple-darwin", "x86_64-unknown-linux-gnu", "x86_64-unknown-linux-musl", "x86_64-pc-windows-msvc"]
+targets = ["aarch64-apple-darwin", "x86_64-apple-darwin", "x86_64-unknown-linux-gnu", "x86_64-unknown-linux-musl"]
 # The archive format to use for windows builds (defaults .zip)
 windows-archive = ".tar.gz"
 # The archive format to use for non-windows builds (defaults .tar.xz)
@@ -131,3 +131,6 @@ publish-jobs = ["homebrew"]
 pr-run-mode = "plan"
 # Whether to install an updater program
 install-updater = true
+
+[dev-dependencies]
+cargo-dist = "^0"
