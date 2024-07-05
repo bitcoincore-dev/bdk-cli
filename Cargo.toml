@@ -11,6 +11,12 @@ keywords = ["bitcoin", "wallet", "descriptor", "psbt", "taproot"]
 readme = "README.md"
 license = "MIT"
 
+[package.metadata.wix]
+upgrade-guid = "E59A6633-9AA0-4B4C-9B5F-C479F7F28A9D"
+path-guid = "37DF86C8-C1EE-4415-B67B-BB0A2552EF79"
+license = false
+eula = false
+
 [dependencies]
 bdk = { version = "0.27.1", default-features = false, features = ["all-keys"] }
 bdk-macros = "0.6"
@@ -97,3 +103,31 @@ regtest-electrum = ["regtest-node", "electrum", "electrsd/electrs_0_8_10"]
 # for libraries to explicitly include the "getrandom/js" feature, so we only do it when
 # necessary for running our CI. See: https://docs.rs/getrandom/0.2.8/getrandom/#webassembly-support
 dev-getrandom-wasm = ["getrandom/js"]
+
+# The profile that 'cargo dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
+
+# Config for 'cargo dist'
+[workspace.metadata.dist]
+# The preferred cargo-dist version to use in CI (Cargo.toml SemVer syntax)
+cargo-dist-version = "0.18.0"
+# CI backends to support
+ci = "github"
+# The installers to generate for each app
+installers = ["shell", "powershell", "homebrew", "msi"]
+# A GitHub repo to push Homebrew formulas to
+tap = "bitcoincore-dev/homebrew-bitcoindevkit.org"
+# Target platforms to build apps for (Rust target-triple syntax)
+targets = ["aarch64-apple-darwin", "x86_64-apple-darwin", "x86_64-unknown-linux-gnu", "x86_64-unknown-linux-musl", "x86_64-pc-windows-msvc"]
+# The archive format to use for windows builds (defaults .zip)
+windows-archive = ".tar.gz"
+# The archive format to use for non-windows builds (defaults .tar.xz)
+unix-archive = ".tar.gz"
+# Publish jobs to run in CI
+publish-jobs = ["homebrew"]
+# Publish jobs to run in CI
+pr-run-mode = "plan"
+# Whether to install an updater program
+install-updater = true
