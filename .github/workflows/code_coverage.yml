@@ -26,17 +26,20 @@ jobs:
         run: rustup override set nightly
 
 
+      - name: Test All Features
+        run: cargo +nightly test --all-features
+
       - name: Test Compiler
-        run: cargo test --features compiler
+        run: cargo +nightly test --features compiler
 
       - name: Test Electrum
-        run: cargo test --features electrum
+        run: cargo +nightly test --features electrum
 
       - name: Test Esplora-Ureq
-        run: cargo test --features esplora-ureq
+        run: cargo +nightly test --features esplora-ureq
 
       - name: Test Esplora-reqwest
-        run: cargo test --features esplora-reqwest
+        run: cargo +nightly test --features esplora-reqwest
 
       # Temporarily disable compact filters
       #- name: Test Compact Filters
