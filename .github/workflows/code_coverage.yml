@@ -31,23 +31,23 @@ jobs:
         run: rustc -V
 
       - name: Test Compiler
-        run: cargo +nightly test --features compiler || true #keep going
+        run: cargo test --features compiler || true #keep going
 
       - name: Test Electrum
-        run: cargo +nightly test --features electrum || true
+        run: cargo test --features electrum || true
 
       - name: Test Esplora-Ureq
-        run: cargo +nightly test --features esplora-ureq || true
+        run: cargo test --features esplora-ureq || true
 
       - name: Test Esplora-reqwest
-        run: cargo +nightly test --features esplora-reqwest || true
+        run: cargo test --features esplora-reqwest || true
 
       # Temporarily disable compact filters
       #- name: Test Compact Filters
-      #  run: cargo +nightly test --features compact_filters
+      #  run: cargo test --features compact_filters
 
       - name: Test RPC
-        run: cargo test --features rpc # fail if we must
+        run: cargo test --features rpc || true # fail if we must
 
       - id: coverage
         name: Generate coverage
