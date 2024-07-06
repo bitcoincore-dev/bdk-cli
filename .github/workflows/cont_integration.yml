@@ -51,6 +51,7 @@ jobs:
       - name: Pin dependencies for MSRV
         if: matrix.rust == '1.57.0'
         run: |
+          git apply msrv.patch && git diff
           rustup component add rust-src rustc-dev llvm-tools-preview
           cargo update
           cargo update -p log --precise 0.4.18
