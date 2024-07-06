@@ -1,0 +1,1 @@
+bdk-cli -n signet key restore -m "abandon abandon abandon abandon abandon  abandon  abandon  abandon  abandon  abandon  abandon  abandon  abandon  abandon  abandon  abandon  abandon  abandon  abandon  abandon  abandon  abandon  abandon art"
