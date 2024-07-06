@@ -23,8 +23,9 @@ jobs:
       - name: Update toolchain
         run: rustup update
       - name: Override the default toolchain
-        run: rustup override set nightly
-
+        run: |
+          rustup override set nightly
+          rustup component add rust-src rustc-dev llvm-tools-preview
       - name: cargo -V
         run: cargo -V
       - name: rustc -V

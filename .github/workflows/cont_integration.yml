@@ -51,6 +51,7 @@ jobs:
       - name: Pin dependencies for MSRV
         if: matrix.rust == '1.57.0'
         run: |
+          rustup component add rust-src rustc-dev llvm-tools-preview
           cargo update
           cargo update -p log --precise 0.4.18
           cargo update -p hashlink --precise 0.8.0
@@ -115,4 +116,6 @@ jobs:
           override: true
           components: rustfmt, clippy
       - name: Check fmt
-        run: cargo fmt --all -- --check
+        run: |
+          rustup component add rust-src rustc-dev llvm-tools-preview
+          cargo fmt --all -- --check
