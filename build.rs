@@ -1,4 +1,12 @@
 use std::env;
+//extern crate rustc_version;
+use rustc_version::{version, version_meta, Channel, Version};
+use std::io::{self, Write};
+use std::process::exit;
+
+fn check_version() {
+    assert!(version().unwrap().major >= 1);
+}
 
 fn main() {
     let electrum = env::var_os("CARGO_FEATURE_ELECTRUM").map(|_| "electrum".to_string());

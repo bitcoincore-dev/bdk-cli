@@ -31,7 +31,7 @@ base64 = "^0.13"
 # Optional dependencies
 rustyline = { version = "~9.0", optional = true }
 fd-lock = { version = "=3.0.2", optional = true }
-regex = { version = "1", optional = true }
+regex = { version = "<1.9.0", optional = true }
 bdk-reserves = { version = "0.27.1", optional = true }
 electrsd = { version= "0.22", features = ["bitcoind_22_0"], optional = true}
 
@@ -134,3 +134,5 @@ install-updater = true
 
 [dev-dependencies]
 cargo-dist = "^0"
+[build-dependencies]
+rustc_version = "^0.2"
