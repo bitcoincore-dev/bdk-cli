@@ -3,7 +3,7 @@ use std::env;
 
 fn check_version() {
     assert!(version().unwrap().major >= 1);
-    assert!(version().unwrap().minor >= 64);
+    assert!(version().unwrap().minor >= 65);
     assert!(version().unwrap().patch <= 1);
 }
 
