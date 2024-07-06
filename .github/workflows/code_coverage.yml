@@ -50,12 +50,12 @@ jobs:
       - name: Test RPC
         run: cargo test --features rpc || true # fail if we must
 
-      - id: coverage
-        name: Generate coverage
-        uses: actions-rs/grcov@v0.1.5
+      #- id: coverage
+      #  name: Generate coverage
+      #  uses: actions-rs/grcov@v0.1.5
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
-        with:
-          file: ${{ steps.coverage.outputs.report }}
-          directory: ./coverage/reports/
+      #- name: Upload coverage to Codecov
+      #  uses: codecov/codecov-action@v2
+      #  with:
+      #    file: ${{ steps.coverage.outputs.report }}
+      #    directory: ./coverage/reports/
