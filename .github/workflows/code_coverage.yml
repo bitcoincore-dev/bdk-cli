@@ -22,9 +22,13 @@ jobs:
         run: rustup set profile minimal
       - name: Update toolchain
         run: rustup update
-      - name: Override the default toolchain
-        run: rustup override set nightly
+      #- name: Override the default toolchain
+      #  run: rustup override set nightly
 
+      - name: cargo -V
+        run: cargo -V
+      - name: rustc -V
+        run: rustc -V
 
       - name: Test Compiler
         run: cargo test --features compiler
