@@ -1,6 +1,14 @@
+use rustc_version::version;
 use std::env;
 
+fn check_version() {
+    assert!(version().unwrap().major >= 1);
+    assert!(version().unwrap().minor >= 64);
+    assert!(version().unwrap().patch <= 1);
+}
+
 fn main() {
+    check_version();
     let electrum = env::var_os("CARGO_FEATURE_ELECTRUM").map(|_| "electrum".to_string());
     let esplora = env::var_os("CARGO_FEATURE_ESPLORA").map(|_| "esplora".to_string());
     let compact_filters =
