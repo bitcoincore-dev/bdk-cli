@@ -23,6 +23,7 @@ env_logger = "0.7"
 base64 = "^0.13"
 rustyline = { version = "^9.0", features = ["regex"] }
 regex = { version = "^1.0.0"}
+ahash = { version = "0.7.6", path = "vendor/ahash-0.7.6" }
 [build-dependencies]
 rustc_version = "0.2"
 
