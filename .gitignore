@@ -3,6 +3,9 @@
 *.swp
 .idea
 
+# macos
+*.DS_Store
+
 vendor/addr2line/
 vendor/adler/
 vendor/aes/
